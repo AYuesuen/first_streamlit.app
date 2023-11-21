@@ -47,6 +47,7 @@ add_my_fruit = streamlit.text_input('What fruit would like see?', "")
 if streamlit.button('Submit'):
   insert_query = "INSERT INTO fruit_load_list (FRUIT_NAME) VALUES (?)"
   data_tuple = (add_my_fruit)
+  try:
   my_cur.execute(insert_query, data_tuple)
 
 streamlit.write('thanks for adding', add_my_fruit)
