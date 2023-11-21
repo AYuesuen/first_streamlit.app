@@ -46,8 +46,6 @@ streamlit.dataframe(my_data_rows)
 # Streamlit App starten
 add_my_fruit = streamlit.text_input('What fruit would you like to add?', "")
 
-# Wenn der Benutzer eine Frucht eingibt und auf "Submit" klickt
-if streamlit.button('Submit'):
     # Überprüfen, ob die Benutzereingabe nicht leer ist
     if add_my_fruit:
         # SQL-Anweisung zum Einfügen eines neuen Datensatzes in die Tabelle
