@@ -51,7 +51,7 @@ if streamlit.button('Submit'):
     # Überprüfen, ob die Benutzereingabe nicht leer ist
     if add_my_fruit:
         # SQL-Anweisung zum Einfügen eines neuen Datensatzes in die Tabelle
-        insert_query = "INSERT INTO fruit_load_list (column_name) VALUES (?)"
+        insert_query = "INSERT INTO fruit_load_list (FRUIT_NAME) VALUES (?)"
         
         # Tupel erstellen, das die Benutzereingabe enthält
         data_tuple = (add_my_fruit,)
