@@ -45,27 +45,5 @@ streamlit.dataframe(my_data_rows)
 
 # Streamlit App starten
 add_my_fruit = streamlit.text_input('What fruit would you like to add?', "")
-
-        # SQL-Anweisung zum Einfügen eines neuen Datensatzes in die Tabelle
-        insert_query = "INSERT INTO fruit_load_list (FRUIT_NAME) VALUES ('?')"
-        
-        # Tupel erstellen, das die Benutzereingabe enthält
-        data_tuple = (add_my_fruit)
-        
-        # Versuch, die Transaktion durchzuführen
-        try:
-            # Datensatz einfügen
-            my_cur.execute(insert_query)
-            
-            # Änderungen in der Datenbank speichern
-            my_cnx.commit()
-            
-            # Benutzer benachrichtigen
-            streamlit.write('Thanks for adding', add_my_fruit, 'to the fruit list!')
-        
-        # Im Falle eines Fehlers die Transaktion rückgängig machen
-        except Exception as e:
-            my_cnx.rollback()
-            streamlit.write('Error:', str(e))
           
 streamlit.write('thanks for adding', add_my_fruit)
