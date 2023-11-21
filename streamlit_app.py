@@ -54,7 +54,7 @@ if streamlit.button('Submit'):
         insert_query = "INSERT INTO fruit_load_list (FRUIT_NAME) VALUES (?)"
         
         # Tupel erstellen, das die Benutzereingabe enthält
-        data_tuple = (add_my_fruit,)
+        data_tuple = (add_my_fruit)
         
         # Versuch, die Transaktion durchzuführen
         try:
