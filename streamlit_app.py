@@ -61,15 +61,8 @@ if streamlit.button('Submit'):
             # Datensatz einfügen
             my_cur.execute(insert_query, data_tuple)
             
-            # Änderungen in der Datenbank speichern
-            conn.commit()
             
             # Benutzer benachrichtigen
             streamlit.write('Thanks for adding', add_my_fruit, 'to the fruit list!')
-        
-        # Im Falle eines Fehlers die Transaktion rückgängig machen
-        except Exception as e:
-            conn.rollback()
-            streamlit.write('Error:', str(e))
           
 streamlit.write('thanks for adding', add_my_fruit)
